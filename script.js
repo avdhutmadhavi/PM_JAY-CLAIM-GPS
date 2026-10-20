@@ -1,39 +1,3 @@
-const hospitalData = [
-  {
-    id: 'district-hospital',
-    name: 'District Hospital',
-    distance: '2.4 km',
-    status: 'PM-JAY empanelled',
-    statusType: 'normal',
-    address: 'Ward 12, Nagpur Road, Nagpur',
-    phone: '0712-555-0101',
-    availability: 'General OPD and surgery support available',
-    assistance: ['Eye screening', 'Claim guidance', 'Referral desk']
-  },
-  {
-    id: 'shree-care',
-    name: 'Shree Care Hospital',
-    distance: '4.1 km',
-    status: 'PM-JAY empanelled',
-    statusType: 'normal',
-    address: 'Near Main Market, Civil Lines',
-    phone: '0712-555-0148',
-    availability: 'Specialist consultation available',
-    assistance: ['Cardiac support', 'Documentation help', 'Hospital liaison']
-  },
-  {
-    id: 'community-hospital',
-    name: 'Community Hospital',
-    distance: '6.8 km',
-    status: 'Check availability',
-    statusType: 'warning',
-    address: 'Bajaj Square, Sadar',
-    phone: '0712-555-0182',
-    availability: 'Phone confirmation recommended',
-    assistance: ['Basic treatment support', 'Referral coordination']
-  }
-];
-
 const translations = {
   en: {
     home: 'Home',
@@ -44,7 +8,7 @@ const translations = {
     homeTitle: 'Find the right PM-JAY help, one step at a time.',
     homeSub: 'Tell us what healthcare help you need. We’ll guide you toward the next step.',
     tellNeed: 'Tell Us Your Need',
-    findHospitalBtn: 'Find a PM-JAY Hospital',
+    findHospitalBtn: 'Find a hospital near me',
     checkRequest: 'Check Request / Claim Status',
     needPageTitle: 'What healthcare help do you need?',
     needPageSub: 'Describe your need in simple words.',
@@ -61,13 +25,18 @@ const translations = {
     edit: 'Edit',
     nextStepTitle: "Here's your next step",
     resultLabel: 'PM-JAY information available',
-    findHospitalAction: 'Find PM-JAY Hospital',
+    findHospitalAction: 'Find a nearby hospital',
     docsAction: 'Documents & Next Steps',
     statusAction: 'Check Request / Claim Status',
     humanAction: 'Get Human Help',
-    hospitalTitle: 'Find a PM-JAY hospital',
+    hospitalTitle: 'Find a hospital near me',
     hospitalSearch: 'Search by hospital, area or district',
-    useLocation: 'Use my location',
+    useLocation: 'Use my location in Google Maps',
+    mapSearchButton: 'Search Google Maps',
+    mapServiceNote: 'Nearby hospital listings will open in Google Maps. If you choose location search, your coordinates are sent to Google Maps and are not saved by Claim GPS. This app does not verify PM-JAY empanelment or treatment availability.',
+    mapDataNote: 'Google Maps provides the hospital listings and directions. Confirm PM-JAY empanelment and treatment availability with official channels before visiting.',
+    locationUnavailable: 'Your browser cannot provide your location. Search by hospital, area or district instead.',
+    locationDenied: 'Location access was denied or unavailable. Allow location access, or search by hospital, area or district instead.',
     hospitalPrototype: 'Prototype/simulated information',
     hospitalCall: 'Call',
     hospitalDirections: 'Directions',
@@ -141,7 +110,7 @@ const translations = {
     homeTitle: 'PM-JAY की सही मदद एक कदम में खोजें।',
     homeSub: 'बताइए आपको किस प्रकार की स्वास्थ्य सहायता चाहिए। हम आपके अगले चरण की ओर मार्गदर्शन करेंगे।',
     tellNeed: 'अपनी आवश्यकता बताएं',
-    findHospitalBtn: 'PM-JAY अस्पताल खोजें',
+    findHospitalBtn: 'मेरे पास अस्पताल खोजें',
     checkRequest: 'अनुरोध / दावा स्थिति देखें',
     needPageTitle: 'आपको किस प्रकार की स्वास्थ्य सहायता चाहिए?',
     needPageSub: 'अपनी आवश्यकता सरल शब्दों में बताएं।',
@@ -158,13 +127,18 @@ const translations = {
     edit: 'संपादित करें',
     nextStepTitle: 'आपका अगला कदम',
     resultLabel: 'PM-JAY जानकारी उपलब्ध है',
-    findHospitalAction: 'PM-JAY अस्पताल ढूंढें',
+    findHospitalAction: 'पास का अस्पताल खोजें',
     docsAction: 'दस्तावेज़ और अगले कदम',
     statusAction: 'अनुरोध / दावा स्थिति देखें',
     humanAction: 'मानवीय सहायता लें',
-    hospitalTitle: 'PM-JAY अस्पताल खोजें',
+    hospitalTitle: 'मेरे पास अस्पताल खोजें',
     hospitalSearch: 'अस्पताल, क्षेत्र या जिले से खोजें',
-    useLocation: 'मेरा स्थान उपयोग करें',
+    useLocation: 'Google Maps में मेरा स्थान उपयोग करें',
+    mapSearchButton: 'Google Maps पर खोजें',
+    mapServiceNote: 'पास के अस्पतालों की सूची Google Maps में खुलेगी। स्थान से खोजने पर आपके निर्देशांक Google Maps को भेजे जाते हैं, Claim GPS उन्हें सहेजता नहीं है। यह ऐप PM-JAY सूचीबद्धता या उपचार उपलब्धता की पुष्टि नहीं करता।',
+    mapDataNote: 'अस्पतालों की सूची और दिशा Google Maps से मिलती है। जाने से पहले आधिकारिक माध्यम से PM-JAY सूचीबद्धता और उपचार की उपलब्धता की पुष्टि करें।',
+    locationUnavailable: 'आपका ब्राउज़र स्थान नहीं बता सकता। अस्पताल, क्षेत्र या जिले से खोजें।',
+    locationDenied: 'स्थान की अनुमति नहीं मिली या स्थान उपलब्ध नहीं है। अनुमति दें या अस्पताल, क्षेत्र अथवा जिले से खोजें।',
     hospitalPrototype: 'प्रोटोटाइप/सिमुलेटेड जानकारी',
     hospitalCall: 'कॉल करें',
     hospitalDirections: 'दिशानिर्देश',
@@ -238,7 +212,7 @@ const translations = {
     homeTitle: 'PM-JAY साठी योग्य मदत एका श्वासात शोधा.',
     homeSub: 'तुम्हाला कोणती आरोग्य मदत हवी आहे ते सांगा. आम्ही तुमच्या पुढच्या पायरीकडे मार्गदर्शन करू.',
     tellNeed: 'तुमची गरज सांगा',
-    findHospitalBtn: 'PM-JAY रुग्णालय शोधा',
+    findHospitalBtn: 'माझ्या जवळचे रुग्णालय शोधा',
     checkRequest: 'अर्ज / दावा स्थिती तपासा',
     needPageTitle: 'तुम्हाला कोणती आरोग्य मदत हवी आहे?',
     needPageSub: 'तुमची गरज सोप्या शब्दांत सांगा.',
@@ -255,13 +229,18 @@ const translations = {
     edit: 'संपादित करा',
     nextStepTitle: 'तुमचा पुढचा टप्पा',
     resultLabel: 'PM-JAY माहिती उपलब्ध आहे',
-    findHospitalAction: 'PM-JAY रुग्णालय शोधा',
+    findHospitalAction: 'जवळचे रुग्णालय शोधा',
     docsAction: 'दस्तऐवज आणि पुढील पायऱ्या',
     statusAction: 'अर्ज / दावा स्थिती तपासा',
     humanAction: 'मानवी मदत घ्या',
-    hospitalTitle: 'PM-JAY रुग्णालय शोधा',
+    hospitalTitle: 'माझ्या जवळचे रुग्णालय शोधा',
     hospitalSearch: 'रुग्णालय, परिसर किंवा जिल्ह्याद्वारे शोधा',
-    useLocation: 'माझा Standort वापरा',
+    useLocation: 'Google Maps मध्ये माझे स्थान वापरा',
+    mapSearchButton: 'Google Maps वर शोधा',
+    mapServiceNote: 'जवळच्या रुग्णालयांची यादी Google Maps मध्ये उघडेल. स्थान वापरल्यास तुमचे निर्देशांक Google Maps कडे पाठवले जातात; Claim GPS ते साठवत नाही. हे अॅप PM-JAY संलग्नता किंवा उपचार उपलब्धतेची पुष्टी करत नाही.',
+    mapDataNote: 'रुग्णालयांची यादी आणि दिशा Google Maps कडून मिळतात. जाण्यापूर्वी अधिकृत माध्यमातून PM-JAY संलग्नता आणि उपचार उपलब्धतेची खात्री करा.',
+    locationUnavailable: 'तुमचा ब्राउझर स्थान देऊ शकत नाही. रुग्णालय, परिसर किंवा जिल्ह्याद्वारे शोधा.',
+    locationDenied: 'स्थानाची परवानगी मिळाली नाही किंवा स्थान उपलब्ध नाही. परवानगी द्या किंवा रुग्णालय, परिसर अथवा जिल्ह्याद्वारे शोधा.',
     hospitalPrototype: 'प्रोटोटाइप/सिम्युलेटेड माहिती',
     hospitalCall: 'कॉल करा',
     hospitalDirections: 'दिशा',
@@ -333,13 +312,17 @@ const state = {
   language: localStorage.getItem('pmjay-language') || 'en',
   needText: '',
   voiceStatus: 'idle',
-  selectedHospital: hospitalData[0],
+  hospitalsLoading: false,
+  hospitalsError: '',
   hospitalSearch: '',
   statusReference: 'PMJAY-2026-00124',
   statusChecked: false,
   statusValid: true,
   statusLoading: false,
   offlineSaved: false,
+  lastRequestReference: null,
+  requestStatusResult: null,
+  statusTimeline: [],
   accessibility: {
     size: localStorage.getItem('pmjay-font-size') || 'normal',
     reducedMotion: localStorage.getItem('pmjay-reduced-motion') === 'true',
@@ -351,6 +334,84 @@ const state = {
     referral: false
   }
 };
+
+const API_BASE = '/api';
+
+async function apiRequest(endpoint, options = {}) {
+  const response = await fetch(`${API_BASE}${endpoint}`, {
+    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+    ...options
+  });
+
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(payload.error || 'The request could not be processed.');
+  }
+
+  return payload;
+}
+
+async function saveNeedRequest() {
+  const description = (state.needText || '').trim();
+  if (!description) {
+    showToast('Please describe your healthcare need before continuing.');
+    return;
+  }
+
+  try {
+    const result = await apiRequest('/requests', {
+      method: 'POST',
+      body: JSON.stringify({
+        description,
+        language: state.language,
+        category: 'general-care'
+      })
+    });
+
+    state.lastRequestReference = result.reference;
+    state.statusReference = result.reference;
+    state.view = 'helpResult';
+    render();
+    showToast(`Request saved. Reference: ${result.reference}`);
+  } catch (error) {
+    showToast(error.message || 'Unable to save your request right now.');
+  }
+}
+
+async function checkRequestStatus(reference) {
+  const trimmedRef = String(reference || '').trim();
+  if (!trimmedRef) {
+    showToast(t('statusTryAgain'));
+    return;
+  }
+
+  try {
+    const result = await apiRequest(`/requests/${encodeURIComponent(trimmedRef)}`);
+    state.statusReference = result.reference;
+    state.statusChecked = true;
+    state.statusValid = true;
+    state.statusLoading = false;
+    state.requestStatusResult = result;
+    state.statusTimeline = result.history || [];
+    render();
+    return result;
+  } catch (error) {
+    state.statusChecked = true;
+    state.statusValid = false;
+    state.statusLoading = false;
+    render();
+    showToast(error.message || t('statusNotFound'));
+    return null;
+  }
+}
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) {
+    return;
+  }
+
+  navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+}
 
 function t(key) {
   return translations[state.language]?.[key] || translations.en[key] || key;
@@ -387,7 +448,6 @@ function render() {
     understanding: renderUnderstandingView(),
     helpResult: renderHelpResultView(),
     hospitals: renderHospitalView(),
-    hospitalDetail: renderHospitalDetailView(),
     documents: renderDocumentsView(),
     status: renderStatusView(),
     offline: renderOfflineView(),
@@ -497,8 +557,7 @@ function handleActionClick(event) {
   }
 
   if (action === 'confirm-request') {
-    state.view = 'helpResult';
-    render();
+    saveNeedRequest();
     return;
   }
 
@@ -533,28 +592,44 @@ function handleActionClick(event) {
   }
 
   if (action === 'use-location') {
-    state.hospitalSearch = 'Nagpur';
+    if (!('geolocation' in navigator)) {
+      state.hospitalsError = t('locationUnavailable');
+      render();
+      return;
+    }
+
+    state.hospitalsLoading = true;
+    state.hospitalsError = '';
     render();
-    showToast('Showing nearby facilities in Nagpur.');
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        const query = encodeURIComponent(`hospitals near ${latitude},${longitude}`);
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+        window.location.assign(mapUrl);
+      },
+      () => {
+        state.hospitalsLoading = false;
+        state.hospitalsError = t('locationDenied');
+        render();
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 300000 }
+    );
     return;
   }
 
-  if (action === 'hospital-view-details') {
-    state.selectedHospital = hospitalData.find((hospital) => hospital.id === button.dataset.hospitalId) || hospitalData[0];
-    state.view = 'hospitalDetail';
-    render();
+  if (action === 'search-maps') {
+    const query = document.getElementById('hospital-search')?.value.trim();
+    if (!query) {
+      showToast(t('searchTryAnother'));
+      return;
+    }
+    window.location.assign(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`);
     return;
   }
 
   if (action === 'hospital-call') {
-    const hospitalName = button.dataset.hospitalName || 'PM-JAY support desk';
-    showToast(`Calling ${hospitalName}...`);
-    return;
-  }
-
-  if (action === 'hospital-directions') {
-    const hospitalName = button.dataset.hospitalName || 'selected hospital';
-    showToast(`Directions opened for ${hospitalName}.`);
+    showToast('Open the nearby hospitals in Google Maps to view verified contact details.');
     return;
   }
 
@@ -580,19 +655,10 @@ function handleActionClick(event) {
 
     state.statusReference = ref;
     state.statusLoading = true;
+    state.statusChecked = false;
     render();
 
-    setTimeout(() => {
-      const valid = ref.toUpperCase().includes('PMJAY-2026-');
-      state.statusChecked = true;
-      state.statusValid = valid;
-      state.statusLoading = false;
-      render();
-
-      if (!valid) {
-        showToast(t('statusNotFound'));
-      }
-    }, 800);
+    checkRequestStatus(ref);
     return;
   }
 
@@ -615,10 +681,24 @@ function handleActionClick(event) {
   }
 
   if (action === 'open-human-modal') {
-    const type = button.dataset.helpType || 'ASHA';
+    const type = button.dataset.helpType || 'asha';
     const title = type === 'asha' ? t('helpRequestReceived') : t('helpRequestReceived');
-    const message = `${t('assistanceCreated')} ${t('referenceTag')} HELP-2026-${String(Math.floor(Math.random() * 900) + 100)}`;
-    openModal('confirm', `${title} — ${message}`);
+
+    apiRequest('/help-requests', {
+      method: 'POST',
+      body: JSON.stringify({
+        helpType: type,
+        description: `Need assistance with ${type} guidance and next steps.`,
+        contactChannel: 'phone'
+      })
+    })
+      .then((payload) => {
+        const message = `${t('assistanceCreated')} ${t('referenceTag')} ${payload.reference}`;
+        openModal('confirm', `${title} — ${message}`);
+      })
+      .catch((error) => {
+        showToast(error.message || 'Unable to submit help request right now.');
+      });
     return;
   }
 
@@ -733,7 +813,7 @@ function renderHomeView() {
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a7 7 0 0 1 7 7c0 4.9-5.3 10.1-6.5 11.2a1 1 0 0 1-1.4 0C10.3 19.6 5 14.4 5 9.5a7 7 0 0 1 7-7Zm0 3.3a3.7 3.7 0 1 0 0 7.4a3.7 3.7 0 0 0 0-7.4Z" fill="currentColor"/></svg>
             </span>
             <h3>${t('findHospitalBtn')}</h3>
-            <p>Locate nearby PM-JAY support options.</p>
+            <p>Find nearby hospitals and confirm PM-JAY status before visiting.</p>
           </button>
 
           <button class="action-card" data-view="status" aria-label="${t('checkStatus')}">
@@ -892,42 +972,6 @@ function renderHelpResultView() {
 }
 
 function renderHospitalView() {
-  const searchValue = state.hospitalSearch.trim().toLowerCase();
-  const filtered = hospitalData.filter((hospital) => {
-    if (!searchValue) return true;
-    const haystack = `${hospital.name} ${hospital.address} ${hospital.assistance.join(' ')}`.toLowerCase();
-    return haystack.includes(searchValue);
-  });
-
-  const hospitalCards = filtered.length
-    ? filtered
-        .map(
-          (hospital) => `
-            <article class="hospital-card">
-              <div class="hospital-meta">
-                <h3>${hospital.name}</h3>
-                <span class="hospital-distance">${hospital.distance}</span>
-              </div>
-              <span class="hospital-status ${hospital.statusType === 'warning' ? 'warning' : ''}">${hospital.status}</span>
-              <div class="address-block">
-                <span>${hospital.address}</span>
-              </div>
-              <div class="card-actions">
-                <button class="small-btn btn-secondary" data-action="hospital-call" data-hospital-name="${escapeHtml(hospital.name)}">${t('hospitalCall')}</button>
-                <button class="small-btn btn-secondary" data-action="hospital-directions" data-hospital-name="${escapeHtml(hospital.name)}">${t('hospitalDirections')}</button>
-              </div>
-              <button class="btn btn-primary" data-action="hospital-view-details" data-hospital-id="${hospital.id}">${t('hospitalDetails')}</button>
-            </article>
-          `
-        )
-        .join('')
-    : `
-      <div class="empty-state">
-        <strong>${t('searchNoResults')}</strong>
-        <p>${t('searchTryAnother')}</p>
-      </div>
-    `;
-
   return `
     <section class="view-section">
       <div class="page-header">
@@ -935,60 +979,19 @@ function renderHospitalView() {
       </div>
 
       <div class="hospital-panel">
+        <p>${t('mapServiceNote')}</p>
         <div class="hospital-controls">
           <div class="search-wrap">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 0 1 5.2 12l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10a5 5 0 0 0 0-10Z" fill="currentColor"/></svg>
             <input id="hospital-search" value="${escapeHtml(state.hospitalSearch)}" placeholder="${t('hospitalSearch')}" aria-label="Search hospitals" />
           </div>
-          <button class="secondary-btn" data-action="use-location">${t('useLocation')}</button>
+          <button class="secondary-btn" data-action="search-maps">${t('mapSearchButton')}</button>
         </div>
-
-        <div class="meta-note" style="margin-top: 12px;">${t('hospitalPrototype')}</div>
-
-        <div class="hospital-grid" style="margin-top: 24px;">${hospitalCards}</div>
-      </div>
-    </section>
-  `;
-}
-
-function renderHospitalDetailView() {
-  const hospital = state.selectedHospital || hospitalData[0];
-
-  return `
-    <section class="view-section">
-      <div class="page-header">
-        <h1>${t('detailsTitle')}</h1>
-      </div>
-
-      <div class="details-grid">
-        <div class="hospital-panel">
-          <div class="hospital-meta">
-            <h2>${hospital.name}</h2>
-            <span class="hospital-status">${hospital.status}</span>
-          </div>
-          <div class="detail-list">
-            <div><span class="detail-label">Distance</span><span class="detail-value">${hospital.distance}</span></div>
-            <div><span class="detail-label">Address</span><span class="detail-value">${hospital.address}</span></div>
-            <div><span class="detail-label">Available assistance</span><span class="detail-value">${hospital.assistance.join(', ')}</span></div>
-            <div><span class="detail-label">Phone</span><span class="detail-value">${hospital.phone}</span></div>
-          </div>
-          <div class="card-actions" style="margin-top: 20px;">
-            <button class="small-btn btn-primary" data-action="hospital-call" data-hospital-name="${escapeHtml(hospital.name)}">Call Help Desk</button>
-            <button class="small-btn btn-secondary" data-action="hospital-directions" data-hospital-name="${escapeHtml(hospital.name)}">Get Directions</button>
-          </div>
-          <div class="card-actions" style="margin-top: 12px;">
-            <button class="small-btn btn-secondary" data-action="hospital-view-details" data-hospital-id="${hospital.id}">View Documents</button>
-            <button class="small-btn btn-primary" data-action="hospital-continue">Continue</button>
-          </div>
+        ${state.hospitalsError ? `<div class="alert-box" role="alert" style="margin-top: 18px;">${escapeHtml(state.hospitalsError)}</div>` : ''}
+        <div class="inline-actions" style="margin-top: 16px;">
+          <button class="primary-btn" data-action="use-location" ${state.hospitalsLoading ? 'disabled' : ''}>${state.hospitalsLoading ? 'Getting your location…' : t('useLocation')}</button>
         </div>
-
-        <div class="hospital-panel">
-          <h3>Important note</h3>
-          <p>Please confirm PM-JAY support and availability with the hospital before visiting.</p>
-          <div class="status-actions" style="margin-top: 18px;">
-            <button class="secondary-btn" data-action="view-documents">${t('docsAction')}</button>
-          </div>
-        </div>
+        <p class="meta-note" style="margin-top: 18px;">${t('mapDataNote')}</p>
       </div>
     </section>
   `;
@@ -1037,13 +1040,17 @@ function renderDocumentsView() {
 }
 
 function renderStatusView() {
-  const timeline = [
+  const defaultTimeline = [
     { key: 'submitted', label: t('submitted'), complete: true },
     { key: 'process', label: t('process'), complete: true },
     { key: 'action', label: t('actionRequired'), complete: false },
     { key: 'complete', label: t('completed'), complete: false }
   ];
 
+  const requestStatus = state.requestStatusResult || null;
+  const timeline = requestStatus && state.statusTimeline.length ? state.statusTimeline : defaultTimeline;
+  const currentStatus = requestStatus ? requestStatus.status : 'Received';
+  const updatedAt = requestStatus ? new Date(requestStatus.updatedAt).toLocaleString() : 'Today, 10:30 AM';
   const inputValue = state.statusReference || 'PMJAY-2026-00124';
 
   return `
@@ -1067,16 +1074,19 @@ function renderStatusView() {
           <div class="status-track">
             <div class="status-row">
               ${timeline
-                .map(
-                  (item) => `
-                    <div class="status-step ${item.complete ? 'complete' : ''}">
-                      <span>${item.label}</span>
+                .map((item) => {
+                  const itemLabel = typeof item === 'object' && item.status ? item.status : item.label || item;
+                  const isComplete = typeof item === 'object' && item.status ? item.status === currentStatus || item.status === 'Received' : item.complete;
+                  return `
+                    <div class="status-step ${isComplete ? 'complete' : ''}">
+                      <span>${escapeHtml(itemLabel)}</span>
                     </div>
-                  `
-                )
+                  `;
+                })
                 .join('')}
             </div>
-            <div class="meta-note"><strong>${t('statusUpdated')}</strong> Today, 10:30 AM</div>
+            <div class="meta-note"><strong>${t('statusUpdated')}</strong> ${escapeHtml(updatedAt)}</div>
+            <div class="meta-note">Current status: <strong>${escapeHtml(currentStatus)}</strong></div>
             <div class="meta-note">${t('statusSimulated')}</div>
           </div>
         ` : ''}
@@ -1240,7 +1250,6 @@ document.addEventListener('change', (event) => {
 document.addEventListener('input', (event) => {
   if (event.target.id === 'hospital-search') {
     state.hospitalSearch = event.target.value;
-    render();
     return;
   }
 
@@ -1261,6 +1270,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   updateDocumentSettings();
+  registerServiceWorker();
   render();
   addActionListeners();
 });
